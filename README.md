@@ -1,221 +1,175 @@
 # 강남룸 - 프리미엄 가라오케
 
-## 프로젝트 개요
-- **이름**: 강남룸
-- **목표**: '강남룸' 키워드로 SEO/AEO/GEO 최적화된 프리미엄 가라오케 홍보 웹사이트
-- **주요 기능**:
-  - ✅ 강남룸 키워드 완벽 최적화 (메타태그, H1/H2, 이미지 alt)
-  - ✅ 모핑 텍스트 및 고급 애니메이션 효과
-  - ✅ 반응형 디자인 (모바일 최적화)
-  - ✅ 블로그형 게시판 (Cloudflare D1 데이터베이스)
-  - ✅ 예약 문의 시스템
-  - ✅ CTA 버튼 (010-5197-1332, 최익현 실장)
+## 🏆 프로젝트 개요
+**강남 최고급 프리미엄 가라오케 웹사이트**
+- **목표**: '강남룸' 키워드 검색 엔진 최상위 노출 (SEO/AEO/GEO 최적화)
+- **디자인**: 골드 & 화이트 고급 럭셔리 테마
+- **배포**: Netlify 자동 배포
 
-## 현재 구현된 기능
-
-### 1. SEO/AEO/GEO 최적화
-- **메타 태그**: 모든 페이지에 '강남룸' 키워드 최적화
-- **구조화된 데이터**: Schema.org (NightClub) 마크업
-- **Open Graph**: 페이스북, 카카오톡 공유 최적화 (가라오케 이미지)
-- **Twitter Card**: 트위터 공유 최적화 (가라오케 이미지)
-- **시맨틱 HTML**: H1, H2 태그에 '강남룸' 키워드 포함
-- **이미지 최적화**: 모든 이미지에 '강남룸' 키워드 포함된 Alt 태그
-- **카테고리별 이미지**: 블로그 각 카테고리에 맞는 가라오케 테마 이미지
-
-### 2. 페이지 구성
-- **홈 (/)**: 히어로 섹션, 특징, 갤러리, CTA
-- **서비스 (/service)**: 프리미엄 룸, 주류, 비즈니스 접대, 단체 예약
-- **시설 안내 (/facilities)**: VIP룸, 프리미엄룸, 부대시설
-- **가격 안내 (/pricing)**: 베이직, 프리미엄, VIP 요금제
-- **오시는 길 (/location)**: 지도, 교통 정보, 연락처
-- **블로그 (/blog)**: 게시판 목록 (D1 데이터베이스)
-- **블로그 상세 (/blog/:slug)**: 게시글 상세 페이지
-- **예약 문의 (/inquiry)**: 온라인 예약 문의 폼
-
-### 3. API 엔드포인트
-- `GET /api/posts` - 블로그 게시글 목록
-- `GET /api/posts/:slug` - 블로그 게시글 상세
-- `POST /api/inquiries` - 예약 문의 접수
-
-### 4. 고급 효과
-- **모핑 텍스트**: 그라데이션 애니메이션
-- **플로팅 효과**: 부드러운 떠다니는 애니메이션
-- **네온 효과**: 발광 텍스트
-- **글로우 버튼**: 호버 시 발광 효과
-- **카드 호버**: 3D 변환 효과
-- **AOS 애니메이션**: 스크롤 기반 애니메이션
-
-## 데이터 구조
-
-### 데이터 저장: JSON 파일
-
-#### posts.json (블로그 게시글)
-```json
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "게시글 제목",
-      "content": "게시글 내용",
-      "excerpt": "요약",
-      "author": "최익현",
-      "category": "카테고리",
-      "slug": "URL 슬러그",
-      "views": 조회수,
-      "image_url": "이미지 URL",
-      "created_at": "날짜"
-    }
-  ]
-}
-```
-
-- **위치**: `/public/data/posts.json`
-- **총 게시글**: 5개 (강남룸 소식, 가격정보, 이용안내, 위치정보, 시설안내)
-
-## URLs
-
-### 로컬 개발
-- **URL**: http://localhost:5173
-- **데이터**: /public/data/posts.json
-
-### 프로덕션 (Netlify)
-- **URL**: https://gangnamroom.netlify.app (배포 후)
-- **커스텀 도메인**: 설정 가능
-
-## 사용 가이드
-
-### 1. 방문자용
-1. **홈페이지 접속**: 메인 페이지에서 강남룸 소개 확인
-2. **서비스 둘러보기**: 네비게이션으로 각 페이지 이동
-3. **블로그 읽기**: 최신 소식 및 정보 확인
-4. **예약 문의**: 온라인 폼 또는 전화 (010-5197-1332)
-5. **모바일 최적화**: 스마트폰에서도 완벽하게 작동
-
-### 2. 관리자용
-- 블로그 게시글 추가: D1 데이터베이스에 직접 추가
-- 문의 내역 확인: inquiries 테이블 조회
-- 게시글 수정: posts 테이블 업데이트
-
-## 배포
-
-### 플랫폼: Netlify
-- **상태**: ✅ Netlify 배포 준비 완료
-- **기술 스택**: HTML + JavaScript + TailwindCSS + JSON 데이터
-- **최종 업데이트**: 2025-10-30
-
-### Netlify 배포 방법
-
-#### 방법 1: GitHub 연동 (권장)
-1. GitHub에 코드 푸시
-2. Netlify에서 "New site from Git" 선택
-3. gangnamroom 저장소 연결
-4. Build settings:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-5. Deploy site 클릭
-
-#### 방법 2: Netlify CLI
-```bash
-# Netlify CLI로 배포
-npm run build
-netlify deploy --prod
-```
-
-#### 배포 후 설정
-- 커스텀 도메인 연결
-- HTTPS 자동 활성화됨
-- 자동 빌드 & 배포 활성화
-
-## 개발 명령어
-
-### 로컬 개발
-```bash
-# 개발 서버 시작
-npm run dev
-
-# 빌드
-npm run build
-
-# 빌드 미리보기
-npm run preview
-```
-
-### 데이터 관리
-```bash
-# 블로그 게시글 데이터
-# 파일 위치: /public/data/posts.json
-# 직접 JSON 파일 수정하여 게시글 추가/수정 가능
-```
-
-### Git
-```bash
-# 상태 확인
-git status
-
-# 커밋
-git add .
-git commit -m "메시지"
-
-# GitHub 푸시 (setup_github_environment 먼저 실행)
-git push origin main
-```
-
-## 연락처
-- **전화**: 010-5197-1332
-- **담당자**: 최익현 실장
-- **영업시간**: 24시간 연중무휴
-- **위치**: 서울 강남구 (강남역 도보 5분)
-
-## 키워드 최적화
-이 웹사이트는 다음 키워드로 검색엔진 최적화되어 있습니다:
-- 강남룸 (메인 키워드)
+## ✨ 주요 키워드
+- 강남룸 (메인)
 - 강남 가라오케
+- 강남역 가라오케
 - 강남 룸
 - 프리미엄 가라오케
-- 강남역 가라오케
-- 비즈니스 접대
-- VIP 룸
+- 강남 VIP룸
+- 24시간 가라오케
+- 강남역 10번 출구
 
-## 기술 스택
-- **프레임워크**: 정적 HTML
-- **배포 플랫폼**: Netlify
-- **데이터 저장**: JSON 파일
-- **빌드 도구**: Vite
-- **스타일링**: TailwindCSS (CDN)
-- **아이콘**: Font Awesome 6.x
-- **애니메이션**: AOS Library
-- **언어**: HTML + JavaScript
+## 🎨 디자인 특징
+- **골드 & 화이트**: 고급스러운 럭셔리 컬러
+- **프리미엄 폰트**: Playfair Display + Noto Serif KR
+- **고급 애니메이션**: AOS 스크롤 애니메이션
+- **반응형**: 모바일/태블릿/데스크톱 완벽 대응
 
-## 프로젝트 구조
+## 🚀 SEO 최적화 (검색 엔진 최상위)
+
+### 1. 메타 태그 최적화
+```html
+✅ Title: 강남룸 | 강남 프리미엄 가라오케 | 24시간 영업 | 010-5197-1332
+✅ Description: 강남역 10번출구 도보5분. 강남 최고급 프리미엄 가라오케
+✅ Keywords: 강남룸, 강남 가라오케, 강남역 가라오케 (10개 이상)
+✅ Canonical URL: https://gangnamroom.netlify.app
+```
+
+### 2. 지역 SEO (GEO)
+```html
+✅ geo.region: KR-11 (서울)
+✅ geo.placename: 강남구
+✅ geo.position: 37.4979;127.0276
+✅ ICBM: 37.4979, 127.0276
+```
+
+### 3. 구조화된 데이터 (Schema.org)
+```json
+✅ @type: NightClub
+✅ @type: LocalBusiness
+✅ name: 강남룸
+✅ address: 서울 강남구 테헤란로
+✅ telephone: +82-10-5197-1332
+✅ openingHours: 24시간
+✅ priceRange: ₩₩₩
+✅ aggregateRating: 4.8/5.0
+```
+
+### 4. Open Graph (소셜 미디어)
+```html
+✅ og:type: business.business
+✅ og:title: 강남룸 - 강남 최고급 프리미엄 가라오케
+✅ og:description: 상세 설명
+✅ og:image: 고품질 이미지
+✅ business:contact_data: 상세 연락처
+```
+
+### 5. 콘텐츠 최적화
+- ✅ H1 태그: 강남룸 (메인 키워드)
+- ✅ H2 태그: 강남룸의 프리미엄, 프리미엄 시설 등
+- ✅ 이미지 Alt: 모든 이미지에 '강남룸' 키워드 포함
+- ✅ 자연스러운 키워드 분포
+- ✅ 5개 블로그 게시글 (각 1000자 이상)
+
+## 📦 프로젝트 구조
 ```
 webapp/
 ├── public/
-│   ├── index.html         # 메인 페이지
+│   ├── index.html          # 메인 페이지 (골드 & 화이트)
 │   └── data/
-│       └── posts.json     # 블로그 게시글 데이터
-├── dist/                  # 빌드 결과물 (Netlify 배포)
-├── netlify.toml           # Netlify 설정
-├── vite.config.ts         # Vite 빌드 설정
-├── package.json           # 의존성 및 스크립트
-└── README.md              # 프로젝트 문서
+│       └── posts.json      # 블로그 게시글 (5개)
+├── dist/                   # 빌드 결과물
+├── netlify.toml            # Netlify 설정
+├── package.json            # 의존성
+└── README.md               # 문서
+```
 
-## 이미지 최적화
-- **메인 갤러리**: 6개의 가라오케 테마 이미지 (프리미엄 메인홀, VIP룸, 음향장비, 무드 조명, 프리미엄 주류, 럭셔리 공간)
-- **블로그 썸네일**: 카테고리별 맞춤 이미지 (강남룸 소식, 가격정보, 이용안내, 위치정보, 시설안내)
-- **시설 페이지**: 실제 가라오케 시설 느낌의 고품질 이미지
-- **Open Graph**: 소셜 미디어 공유 시 가라오케 테마 이미지
-- **모든 이미지**: Alt 태그에 '강남룸' 키워드 포함
+## 📊 콘텐츠
 
-## 다음 단계 (권장)
-1. ✅ 로컬 개발 및 테스트 완료
-2. ✅ 가라오케 테마 이미지 최적화 완료
-3. ✅ Netlify 배포 준비 완료
-4. ⏳ GitHub에 푸시
-5. ⏳ Netlify에서 GitHub 연동 배포
-6. ⏳ 커스텀 도메인 연결 (선택사항)
-7. ⏳ Google Search Console 등록
-8. ⏳ 네이버 검색 등록
-9. ⏳ 실제 매장 이미지로 교체 (선택사항 - 현재는 고품질 가라오케 테마 이미지)
+### 메인 페이지
+- ✅ 히어로 섹션 (배경 이미지 + 골드 텍스트)
+- ✅ 특징 섹션 (6개 주요 특징)
+- ✅ 갤러리 섹션 (6개 이미지)
+- ✅ CTA 섹션 (예약 문의)
+- ✅ 플로팅 버튼 (010-5197-1332)
+- ✅ 푸터 (연락처, 위치, 운영시간)
 
-## 라이선스
-© 2024 강남룸. All rights reserved.
+### 블로그 게시글 (5개)
+1. **강남룸 오픈 안내** (1247 views)
+   - 키워드: 강남룸, 강남 가라오케, 강남역 가라오케
+   
+2. **가격 안내** (2134 views)
+   - 키워드: 강남룸 가격, 강남 가라오케 가격
+   
+3. **예약 방법** (1876 views)
+   - 키워드: 강남룸 예약, 강남 가라오케 예약
+   
+4. **위치 및 오시는 길** (3421 views)
+   - 키워드: 강남룸 위치, 강남역 10번 출구
+   
+5. **VIP 룸 소개** (2891 views)
+   - 키워드: 강남룸 VIP, 강남 VIP룸
+
+## 🌐 배포 정보
+
+### Netlify 배포
+- **저장소**: https://github.com/kimoong1/gangnamroom
+- **배포 URL**: https://gangnamroom.netlify.app (예정)
+- **자동 배포**: GitHub push 시 자동
+
+### 빌드 설정
+```toml
+[build]
+  publish = "dist"
+  command = "npm run build"
+```
+
+## 📞 연락처
+- **전화**: 010-5197-1332
+- **담당자**: 최익현 실장
+- **운영시간**: 24시간 연중무휴
+- **위치**: 서울 강남구 테헤란로 (강남역 10번 출구 도보 5분)
+
+## 🎯 SEO 체크리스트
+
+### 필수 항목
+- [x] 메타 태그 (Title, Description, Keywords)
+- [x] 지역 SEO (geo 태그)
+- [x] 구조화된 데이터 (Schema.org)
+- [x] Open Graph (소셜 미디어)
+- [x] Canonical URL
+- [x] 이미지 Alt 태그
+- [x] 반응형 디자인
+- [x] 빠른 로딩 속도
+- [x] 모바일 최적화
+
+### 배포 후 작업
+- [ ] Google Search Console 등록
+- [ ] 네이버 서치어드바이저 등록
+- [ ] 구글 마이 비즈니스 등록
+- [ ] 네이버 플레이스 등록
+- [ ] 사이트맵 제출
+- [ ] robots.txt 설정
+
+## 🔧 기술 스택
+- **HTML5**: 시맨틱 마크업
+- **CSS3**: 골드 & 화이트 커스텀 디자인
+- **JavaScript**: 인터랙션 & 애니메이션
+- **Font**: Playfair Display, Noto Serif KR
+- **Icons**: Font Awesome 6.5.1
+- **Animation**: AOS 2.3.1
+- **Deployment**: Netlify
+
+## 📈 성능 목표
+- Lighthouse Performance: 90+
+- Lighthouse SEO: 100
+- Lighthouse Accessibility: 90+
+- Lighthouse Best Practices: 90+
+
+## 🎨 컬러 팔레트
+- **Gold**: #D4AF37 (메인)
+- **Gold Light**: #F4E4C1
+- **Gold Dark**: #B8960A
+- **White**: #FFFFFF (배경)
+- **Black**: #1A1A1A (텍스트)
+- **Gray**: #F8F8F8
+
+## 📝 라이선스
+© 2024 강남룸 GANGNAM ROOM. All Rights Reserved.
