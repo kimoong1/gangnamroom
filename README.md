@@ -140,13 +140,24 @@ webapp/
 - [x] 빠른 로딩 속도
 - [x] 모바일 최적화
 
+### 배포 전 완료 항목 ✅
+- [x] **robots.txt**: 검색엔진 + AI 크롤러 설정 완료
+- [x] **ai.txt**: AI 학습 데이터 정책 (AEO 최적화)
+- [x] **sitemap.xml**: 메인 사이트맵 (이미지 정보 포함)
+- [x] **sitemap-blog.xml**: 블로그 전용 사이트맵
+- [x] **feed.xml**: RSS 2.0 피드 (지역 정보 포함)
+- [x] **manifest.json**: PWA 설정
+- [x] **browserconfig.xml**: Windows 타일 설정
+- [x] **humans.txt**: 사람이 읽는 정보
+- [x] **.well-known/security.txt**: 보안 연락처
+
 ### 배포 후 작업
 - [ ] Google Search Console 등록
 - [ ] 네이버 서치어드바이저 등록
 - [ ] 구글 마이 비즈니스 등록
 - [ ] 네이버 플레이스 등록
-- [ ] 사이트맵 제출
-- [ ] robots.txt 설정
+- [ ] 사이트맵 제출 (sitemap.xml, sitemap-blog.xml)
+- [ ] RSS 피드 제출 (feed.xml)
 
 ## 🔧 기술 스택
 - **HTML5**: 시맨틱 마크업
