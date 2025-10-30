@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <title>강남룸 - 프리미엄 가라오케 | 24시간 연중무휴</title>
+    <meta name="description" content="강남 최고의 프리미엄 가라오케 강남룸. 최신 음향시설과 고급스러운 인테리어로 특별한 시간을 선사합니다. 문의: 010-5197-1332 (최익현 실장)">
+    <meta name="keywords" content="강남룸, 강남 가라오케, 강남 룸, 프리미엄 가라오케, 강남역 가라오케, VIP 룸">
+    <meta name="author" content="최익현">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gangnamroom.netlify.app">
+    
+    <!-- Open Graph (페이스북, 카카오톡) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="강남룸 - 프리미엄 가라오케">
+    <meta property="og:description" content="강남 최고의 프리미엄 가라오케 강남룸">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:url" content="https://gangnamroom.netlify.app">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="강남룸 - 프리미엄 가라오케">
+    <meta name="twitter:description" content="강남 최고의 프리미엄 가라오케 강남룸">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&q=80">
+    
+    <!-- 구조화된 데이터 (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NightClub",
+      "name": "강남룸",
+      "description": "강남 최고의 프리미엄 가라오케",
+      "url": "https://gangnamroom.netlify.app",
+      "telephone": "+82-10-5197-1332",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "서울",
+        "addressRegion": "강남구",
+        "addressCountry": "KR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "37.4979",
+        "longitude": "127.0276"
+      },
+      "openingHours": "Mo-Su 00:00-24:00",
+      "priceRange": "₩₩₩"
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#8B5CF6',
+              secondary: '#EC4899',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS 애니메이션 라이브러리 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- 커스텀 CSS -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+      
+      * {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      
+      /* 모핑 텍스트 애니메이션 */
+      .morphing-text {
+        animation: morph 8s ease-in-out infinite;
+        background: linear-gradient(90deg, #8B5CF6, #EC4899, #8B5CF6);
+        background-size: 200% auto;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 900;
+      }
+      
+      @keyframes morph {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      
+      /* 플로팅 애니메이션 */
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      /* 네온 효과 */
+      .neon-text {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #8B5CF6, 0 0 40px #8B5CF6;
+      }
+      
+      /* 글로우 버튼 */
+      .glow-button {
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        transition: all 0.3s ease;
+      }
+      
+      .glow-button:hover {
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.9);
+        transform: scale(1.05);
+      }
+      
+      /* 카드 호버 효과 */
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* 스크롤 인디케이터 */
+      .scroll-indicator {
+        animation: scroll-bounce 2s infinite;
+      }
+      
+      @keyframes scroll-bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(10px); }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 네비게이션 -->
+    <nav class="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-microphone-alt mr-2"></i>
+                    <span class="neon-text">강남룸</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="hover:text-pink-200 transition">홈</a>
+                    <a href="/service.html" class="hover:text-pink-200 transition">서비스</a>
+                    <a href="/facilities.html" class="hover:text-pink-200 transition">시설안내</a>
+                    <a href="/pricing.html" class="hover:text-pink-200 transition">가격안내</a>
+                    <a href="/location.html" class="hover:text-pink-200 transition">오시는길</a>
+                    <a href="/blog.html" class="hover:text-pink-200 transition">블로그</a>
+                    <a href="/inquiry.html" class="hover:text-pink-200 transition">예약문의</a>
+                </div>
+                <a href="tel:010-5197-1332" class="bg-white text-purple-600 px-6 py-2 rounded-full font-bold glow-button">
+                    <i class="fas fa-phone mr-2"></i>전화하기
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 히어로 섹션 -->
+    <section class="text-white py-32 relative overflow-hidden" style="min-height: 600px;">
+        <!-- 배경 이미지 -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1920&h=1080&fit=crop&q=80" 
+                 alt="강남룸 프리미엄 가라오케 서비스"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-purple-800/85 to-pink-900/90"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-6xl md:text-7xl font-black mb-6 morphing-text" data-aos="fade-up">
+                강남룸
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 font-light" data-aos="fade-up" data-aos-delay="200">
+                강남 최고의 프리미엄 가라오케
+            </p>
+            <p class="text-xl mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                최신 음향시설과 고급스러운 인테리어로 특별한 시간을 선사합니다
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="tel:010-5197-1332" class="bg-white text-purple-600 px-10 py-4 rounded-full text-lg font-bold glow-button inline-block">
+                    <i class="fas fa-phone mr-2"></i>지금 전화하기
+                </a>
+                <a href="/inquiry.html" class="bg-pink-600 text-white px-10 py-4 rounded-full text-lg font-bold glow-button inline-block">
+                    <i class="fas fa-calendar-check mr-2"></i>온라인 예약
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <i class="fas fa-chevron-down text-4xl text-white opacity-70"></i>
+        </div>
+    </section>
+    
+    <!-- 특징 섹션 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+                <span class="morphing-text">강남룸</span>의 특별함
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 card-hover bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-6xl mb-6">🎤</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">최신 음향 시설</h3>
+                    <p class="text-gray-600">프리미엄 음향장비로 완벽한 사운드를 경험하세요</p>
+                </div>
+                <div class="text-center p-8 card-hover bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-6xl mb-6">✨</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">고급스러운 인테리어</h3>
+                    <p class="text-gray-600">세련되고 모던한 공간에서 특별한 시간을 보내세요</p>
+                </div>
+                <div class="text-center p-8 card-hover bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-6xl mb-6">🌟</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">프리미엄 서비스</h3>
+                    <p class="text-gray-600">최고의 서비스로 만족스러운 경험을 제공합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 이미지 갤러리 섹션 -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+                <span class="morphing-text">강남룸</span> 갤러리
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 프리미엄 가라오케 메인홀 고급스러운 인테리어" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">프리미엄 메인홀</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 VIP룸 고급 인테리어 마이크와 조명" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">VIP 룸</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 최신 음향장비 프로페셔널 사운드 시스템" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">최신 음향장비</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 가라오케 분위기 조명과 무대" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">무드 조명</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 프리미엄 주류 서비스 와인과 위스키" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">프리미엄 주류</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 편안한 소파와 테이블 서비스" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">럭셔리 공간</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA 섹션 -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+                지금 바로 예약하세요
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                강남룸에서 특별한 시간을 만들어보세요
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center">
+                    <div class="text-5xl font-black mb-2">010-5197-1332</div>
+                    <div class="text-lg">최익현 실장</div>
+                </div>
+                <a href="tel:010-5197-1332" class="bg-white text-purple-600 px-10 py-4 rounded-full text-lg font-bold glow-button">
+                    <i class="fas fa-phone-volume mr-2"></i>전화 상담하기
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 플로팅 CTA 버튼 -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="tel:010-5197-1332" 
+           class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full shadow-2xl glow-button flex items-center space-x-2 floating">
+            <i class="fas fa-phone-volume text-2xl"></i>
+            <div class="text-left">
+                <div class="text-xs">지금 바로 문의</div>
+                <div class="text-lg font-bold">010-5197-1332</div>
+            </div>
+        </a>
+    </div>
+    
+    <!-- 푸터 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 morphing-text">강남룸</h3>
+                    <p class="text-gray-400">강남 최고의 프리미엄 가라오케</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">연락처</h4>
+                    <p class="text-gray-400 mb-2">
+                        <i class="fas fa-phone mr-2"></i>010-5197-1332
+                    </p>
+                    <p class="text-gray-400 mb-2">
+                        <i class="fas fa-user mr-2"></i>최익현 실장
+                    </p>
+                    <p class="text-gray-400">
+                        <i class="fas fa-map-marker-alt mr-2"></i>서울 강남구
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">운영시간</h4>
+                    <p class="text-gray-400">24시간 연중무휴</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 강남룸. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AOS 초기화 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    </script>
+</body>
+</html>

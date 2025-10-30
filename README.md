@@ -47,48 +47,39 @@
 
 ## 데이터 구조
 
-### 데이터베이스: Cloudflare D1 (SQLite)
+### 데이터 저장: JSON 파일
 
-#### posts 테이블
-```sql
-- id: INTEGER PRIMARY KEY
-- title: TEXT (게시글 제목)
-- content: TEXT (게시글 내용)
-- excerpt: TEXT (요약)
-- author: TEXT (작성자 - 최익현)
-- category: TEXT (카테고리)
-- slug: TEXT UNIQUE (URL 슬러그)
-- views: INTEGER (조회수)
-- published: BOOLEAN (공개 여부)
-- image_url: TEXT (게시글 썸네일 이미지)
-- created_at: DATETIME
-- updated_at: DATETIME
+#### posts.json (블로그 게시글)
+```json
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "게시글 제목",
+      "content": "게시글 내용",
+      "excerpt": "요약",
+      "author": "최익현",
+      "category": "카테고리",
+      "slug": "URL 슬러그",
+      "views": 조회수,
+      "image_url": "이미지 URL",
+      "created_at": "날짜"
+    }
+  ]
+}
 ```
 
-#### inquiries 테이블
-```sql
-- id: INTEGER PRIMARY KEY
-- name: TEXT (문의자 이름)
-- phone: TEXT (연락처)
-- party_size: INTEGER (인원)
-- visit_date: TEXT (방문 예정일)
-- message: TEXT (문의 내용)
-- status: TEXT (처리 상태)
-- created_at: DATETIME
-```
+- **위치**: `/public/data/posts.json`
+- **총 게시글**: 5개 (강남룸 소식, 가격정보, 이용안내, 위치정보, 시설안내)
 
 ## URLs
 
 ### 로컬 개발
-- **URL**: http://localhost:3000
-- **API**: http://localhost:3000/api/posts
+- **URL**: http://localhost:5173
+- **데이터**: /public/data/posts.json
 
-### 샌드박스 테스트
-- **URL**: https://3000-ig83vudjvh88l7t3imogw-dfc00ec5.sandbox.novita.ai
-- **API**: https://3000-ig83vudjvh88l7t3imogw-dfc00ec5.sandbox.novita.ai/api/posts
-
-### 프로덕션 (배포 후)
-- **URL**: https://webapp.pages.dev
+### 프로덕션 (Netlify)
+- **URL**: https://gangnamroom.netlify.app (배포 후)
 - **커스텀 도메인**: 설정 가능
 
 ## 사용 가이드
@@ -107,68 +98,53 @@
 
 ## 배포
 
-### 플랫폼: Cloudflare Pages
-- **상태**: 🟡 로컬 개발 완료 (프로덕션 배포 대기)
-- **기술 스택**: Hono + TypeScript + TailwindCSS + Cloudflare D1
+### 플랫폼: Netlify
+- **상태**: ✅ Netlify 배포 준비 완료
+- **기술 스택**: HTML + JavaScript + TailwindCSS + JSON 데이터
 - **최종 업데이트**: 2025-10-30
 
-### 배포 방법
+### Netlify 배포 방법
 
-#### 1. Cloudflare API 설정
+#### 방법 1: GitHub 연동 (권장)
+1. GitHub에 코드 푸시
+2. Netlify에서 "New site from Git" 선택
+3. gangnamroom 저장소 연결
+4. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+5. Deploy site 클릭
+
+#### 방법 2: Netlify CLI
 ```bash
-# Cloudflare API 토큰 설정 필요
-setup_cloudflare_api_key
+# Netlify CLI로 배포
+npm run build
+netlify deploy --prod
 ```
 
-#### 2. 프로덕션 데이터베이스 생성
-```bash
-npx wrangler d1 create webapp-production
-# 반환된 database_id를 wrangler.jsonc에 추가
-```
-
-#### 3. 마이그레이션 적용
-```bash
-npm run db:migrate:prod
-```
-
-#### 4. 배포
-```bash
-npm run deploy
-```
+#### 배포 후 설정
+- 커스텀 도메인 연결
+- HTTPS 자동 활성화됨
+- 자동 빌드 & 배포 활성화
 
 ## 개발 명령어
 
 ### 로컬 개발
 ```bash
+# 개발 서버 시작
+npm run dev
+
 # 빌드
 npm run build
 
-# 로컬 서버 시작 (PM2)
-pm2 start ecosystem.config.cjs
-
-# PM2 로그 확인
-pm2 logs webapp --nostream
-
-# PM2 재시작
-fuser -k 3000/tcp && pm2 restart webapp
-
-# PM2 중지
-pm2 delete webapp
+# 빌드 미리보기
+npm run preview
 ```
 
-### 데이터베이스
+### 데이터 관리
 ```bash
-# 로컬 마이그레이션
-npm run db:migrate:local
-
-# 시드 데이터 추가
-npm run db:seed
-
-# 데이터베이스 초기화
-npm run db:reset
-
-# 로컬 데이터베이스 쿼리
-npm run db:console:local
+# 블로그 게시글 데이터
+# 파일 위치: /public/data/posts.json
+# 직접 JSON 파일 수정하여 게시글 추가/수정 가능
 ```
 
 ### Git
@@ -201,27 +177,25 @@ git push origin main
 - VIP 룸
 
 ## 기술 스택
-- **프레임워크**: Hono 4.x
-- **런타임**: Cloudflare Workers
-- **데이터베이스**: Cloudflare D1 (SQLite)
+- **프레임워크**: 정적 HTML
+- **배포 플랫폼**: Netlify
+- **데이터 저장**: JSON 파일
 - **빌드 도구**: Vite
 - **스타일링**: TailwindCSS (CDN)
 - **아이콘**: Font Awesome 6.x
 - **애니메이션**: AOS Library
-- **언어**: TypeScript
+- **언어**: HTML + JavaScript
 
 ## 프로젝트 구조
 ```
 webapp/
-├── src/
-│   └── index.tsx          # 메인 Hono 애플리케이션
-├── migrations/
-│   └── 0001_initial_schema.sql  # D1 마이그레이션
-├── public/                # 정적 파일 (이미지 등)
-├── dist/                  # 빌드 결과물
-├── seed.sql               # 초기 데이터
-├── ecosystem.config.cjs   # PM2 설정
-├── wrangler.jsonc         # Cloudflare 설정
+├── public/
+│   ├── index.html         # 메인 페이지
+│   └── data/
+│       └── posts.json     # 블로그 게시글 데이터
+├── dist/                  # 빌드 결과물 (Netlify 배포)
+├── netlify.toml           # Netlify 설정
+├── vite.config.ts         # Vite 빌드 설정
 ├── package.json           # 의존성 및 스크립트
 └── README.md              # 프로젝트 문서
 
@@ -235,9 +209,9 @@ webapp/
 ## 다음 단계 (권장)
 1. ✅ 로컬 개발 및 테스트 완료
 2. ✅ 가라오케 테마 이미지 최적화 완료
-3. ⏳ Cloudflare API 토큰 설정
-4. ⏳ 프로덕션 D1 데이터베이스 생성
-5. ⏳ Cloudflare Pages에 배포
+3. ✅ Netlify 배포 준비 완료
+4. ⏳ GitHub에 푸시
+5. ⏳ Netlify에서 GitHub 연동 배포
 6. ⏳ 커스텀 도메인 연결 (선택사항)
 7. ⏳ Google Search Console 등록
 8. ⏳ 네이버 검색 등록
