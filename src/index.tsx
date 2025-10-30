@@ -20,7 +20,7 @@ app.use('/static/*', serveStatic({ root: './' }))
 app.get('/api/posts', async (c) => {
   const { DB } = c.env
   const { results } = await DB.prepare(`
-    SELECT id, title, excerpt, author, category, slug, views, created_at 
+    SELECT id, title, excerpt, author, category, slug, views, created_at, image_url 
     FROM posts 
     WHERE published = 1 
     ORDER BY created_at DESC 
@@ -129,14 +129,14 @@ function renderLayout(title: string, content: string, keywords = '강남룸, 강
     <meta property="og:type" content="website">
     <meta property="og:title" content="${title} | 강남룸">
     <meta property="og:description" content="강남 최고의 프리미엄 가라오케 강남룸">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=630&fit=crop">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&q=80">
     <meta property="og:url" content="https://webapp.pages.dev">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title} | 강남룸">
     <meta name="twitter:description" content="강남 최고의 프리미엄 가라오케 강남룸">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=630&fit=crop">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&q=80">
     
     <!-- 구조화된 데이터 (Schema.org) -->
     <script type="application/ld+json">
@@ -407,20 +407,53 @@ function renderMainPage() {
                 <span class="morphing-text">강남룸</span> 갤러리
             </h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="card-hover" data-aos="zoom-in" data-aos-delay="0">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop" 
-                         alt="강남룸 프리미엄 가라오케 메인홀" 
-                         class="w-full h-64 object-cover rounded-xl shadow-lg">
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 프리미엄 가라오케 메인홀 고급스러운 인테리어" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">프리미엄 메인홀</p>
+                    </div>
                 </div>
-                <div class="card-hover" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop" 
-                         alt="강남룸 VIP룸 고급 인테리어" 
-                         class="w-full h-64 object-cover rounded-xl shadow-lg">
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 VIP룸 고급 인테리어 마이크와 조명" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">VIP 룸</p>
+                    </div>
                 </div>
-                <div class="card-hover" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&h=600&fit=crop" 
-                         alt="강남룸 최신 음향장비" 
-                         class="w-full h-64 object-cover rounded-xl shadow-lg">
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 최신 음향장비 프로페셔널 사운드 시스템" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">최신 음향장비</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 가라오케 분위기 조명과 무대" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">무드 조명</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 프리미엄 주류 서비스 와인과 위스키" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">프리미엄 주류</p>
+                    </div>
+                </div>
+                <div class="card-hover relative overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=600&fit=crop&q=80" 
+                         alt="강남룸 편안한 소파와 테이블 서비스" 
+                         class="w-full h-64 object-cover shadow-lg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <p class="text-white font-bold text-lg">럭셔리 공간</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -548,8 +581,8 @@ function renderFacilitiesPage() {
             <div class="max-w-6xl mx-auto mb-16" data-aos="fade-up">
                 <div class="bg-white rounded-xl shadow-xl overflow-hidden">
                     <div class="grid md:grid-cols-2">
-                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop" 
-                             alt="강남룸 VIP룸 시설" 
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80" 
+                             alt="강남룸 VIP룸 시설 고급스러운 인테리어와 조명" 
                              class="w-full h-full object-cover">
                         <div class="p-12">
                             <h2 class="text-3xl font-bold mb-6 text-gray-800">VIP 룸</h2>
@@ -587,8 +620,8 @@ function renderFacilitiesPage() {
                                 <li><i class="fas fa-check text-purple-600 mr-2"></i>테이블 서비스</li>
                             </ul>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop" 
-                             alt="강남룸 프리미엄룸 시설" 
+                        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&h=600&fit=crop&q=80" 
+                             alt="강남룸 프리미엄룸 시설 마이크와 무대 조명" 
                              class="w-full h-full object-cover order-1 md:order-2">
                     </div>
                 </div>
@@ -869,13 +902,20 @@ function renderBlogPage() {
           const container = document.getElementById('blog-posts');
           
           if (data.posts && data.posts.length > 0) {
-            container.innerHTML = data.posts.map((post, index) => \`
+            container.innerHTML = data.posts.map((post, index) => {
+              // DB에 저장된 이미지 URL 사용, 없으면 기본 이미지
+              const imageUrl = post.image_url || 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop&q=80';
+              return \`
               <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="\${index * 100}">
-                  <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
-                      <i class="fas fa-newspaper text-6xl text-white"></i>
+                  <div class="h-48 overflow-hidden relative">
+                      <img src="\${imageUrl}" 
+                           alt="강남룸 \${post.category} - \${post.title}" 
+                           class="w-full h-full object-cover">
+                      <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                          \${post.category}
+                      </div>
                   </div>
                   <div class="p-6">
-                      <div class="text-sm text-purple-600 font-semibold mb-2">\${post.category}</div>
                       <h3 class="text-xl font-bold mb-3 text-gray-800">\${post.title}</h3>
                       <p class="text-gray-600 mb-4">\${post.excerpt}</p>
                       <div class="flex justify-between items-center text-sm text-gray-500 mb-4">
@@ -887,7 +927,8 @@ function renderBlogPage() {
                       </a>
                   </div>
               </div>
-            \`).join('');
+            \`;
+            }).join('');
           } else {
             container.innerHTML = '<div class="col-span-3 text-center py-12"><p class="text-gray-600">게시글이 없습니다.</p></div>';
           }
@@ -924,15 +965,27 @@ function renderBlogDetailPage(slug: string) {
           
           if (data.post) {
             const post = data.post;
+            
+            // DB에 저장된 이미지 URL 사용, 없으면 기본 이미지
+            const imageUrl = post.image_url ? post.image_url.replace('w=600&h=400', 'w=1200&h=600') : 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=600&fit=crop&q=80';
+            
             container.innerHTML = \`
               <article class="bg-white rounded-xl shadow-xl overflow-hidden" data-aos="fade-up">
-                  <div class="h-64 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
-                      <i class="fas fa-newspaper text-8xl text-white"></i>
+                  <div class="h-64 md:h-96 overflow-hidden relative">
+                      <img src="\${imageUrl}" 
+                           alt="강남룸 \${post.category} - \${post.title}" 
+                           class="w-full h-full object-cover">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                          <div class="p-8 text-white">
+                              <div class="inline-block bg-purple-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                                  \${post.category}
+                              </div>
+                              <h1 class="text-4xl md:text-5xl font-bold">\${post.title}</h1>
+                          </div>
+                      </div>
                   </div>
                   <div class="p-12">
-                      <div class="text-sm text-purple-600 font-semibold mb-2">\${post.category}</div>
-                      <h1 class="text-4xl font-bold mb-4 text-gray-800">\${post.title}</h1>
-                      <div class="flex items-center text-gray-500 mb-8 space-x-6">
+                      <div class="flex items-center text-gray-500 mb-8 space-x-6 border-b pb-6">
                           <span><i class="fas fa-user mr-2"></i>\${post.author}</span>
                           <span><i class="fas fa-calendar mr-2"></i>\${new Date(post.created_at).toLocaleDateString('ko-KR')}</span>
                           <span><i class="fas fa-eye mr-2"></i>\${post.views} views</span>

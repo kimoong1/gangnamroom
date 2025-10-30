@@ -1,12 +1,13 @@
 -- 강남룸 블로그 게시글 샘플 데이터
-INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug) VALUES 
+INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug, image_url) VALUES 
   (
     '강남룸 프리미엄 가라오케 오픈 안내',
     '강남 최고의 프리미엄 가라오케 강남룸이 새롭게 오픈했습니다. 최신 음향시설과 고급스러운 인테리어로 특별한 시간을 보내실 수 있습니다. 문의: 010-5197-1332 (최익현 실장)',
     '강남 최고의 프리미엄 가라오케 강남룸 오픈',
     '최익현',
     '강남룸 소식',
-    'gangnam-room-opening'
+    'gangnam-room-opening',
+    'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop&q=80'
   ),
   (
     '강남룸 시스템 및 가격 안내',
@@ -14,7 +15,8 @@ INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug) VA
     '강남룸 가격 및 시스템 상세 안내',
     '최익현',
     '가격정보',
-    'gangnam-room-pricing'
+    'gangnam-room-pricing',
+    'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&h=400&fit=crop&q=80'
   ),
   (
     '강남룸 예약 및 문의 안내',
@@ -22,7 +24,8 @@ INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug) VA
     '강남룸 예약 방법 및 이용 안내',
     '최익현',
     '이용안내',
-    'gangnam-room-reservation'
+    'gangnam-room-reservation',
+    'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=400&fit=crop&q=80'
   ),
   (
     '강남 가라오케 강남룸 위치 및 교통편',
@@ -30,7 +33,8 @@ INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug) VA
     '강남룸 위치 및 오시는 길',
     '최익현',
     '위치정보',
-    'gangnam-room-location'
+    'gangnam-room-location',
+    'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=400&fit=crop&q=80'
   ),
   (
     '강남룸 VIP 룸 소개',
@@ -38,5 +42,6 @@ INSERT OR IGNORE INTO posts (title, content, excerpt, author, category, slug) VA
     '강남룸 VIP 룸 시설 소개',
     '최익현',
     '시설안내',
-    'gangnam-room-vip'
+    'gangnam-room-vip',
+    'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&h=400&fit=crop&q=80'
   );
