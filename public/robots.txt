@@ -10,8 +10,8 @@ Allow: /data/posts.json
 Crawl-delay: 0
 
 # Sitemap 위치
-Sitemap: https://gangnamroom.netlify.app/sitemap.xml
-Sitemap: https://gangnamroom.netlify.app/sitemap-blog.xml
+Sitemap: https://gangnamroom.co.kr/sitemap.xml
+Sitemap: https://gangnamroom.co.kr/sitemap-blog.xml
 
 # 주요 검색엔진별 설정
 User-agent: Googlebot
@@ -50,4 +50,4 @@ User-agent: Google-Extended
 Allow: /
 
 # 호스트 정보
-Host: https://gangnamroom.netlify.app
+Host: https://gangnamroom.co.kr

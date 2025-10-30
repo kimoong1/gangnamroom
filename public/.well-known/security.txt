@@ -1,4 +1,4 @@
 Contact: tel:+82-10-5197-1332
-Contact: https://gangnamroom.netlify.app/
+Contact: https://gangnamroom.co.kr/
 Preferred-Languages: ko, en
-Canonical: https://gangnamroom.netlify.app/.well-known/security.txt
+Canonical: https://gangnamroom.co.kr/.well-known/security.txt

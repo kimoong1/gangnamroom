@@ -3,7 +3,7 @@
 
 # 웹사이트 정보
 Site-Name: 강남룸
-Site-URL: https://gangnamroom.netlify.app
+Site-URL: https://gangnamroom.co.kr
 Contact: 010-5197-1332
 Manager: 최익현 실장
 

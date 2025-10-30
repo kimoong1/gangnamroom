@@ -39,15 +39,16 @@ Publish directory: dist
 
 ## 🎉 배포 완료 후
 
-### 예상 URL
+### 배포 URL
 ```
-https://[random-name].netlify.app
-→ https://gangnamroom.netlify.app (사이트 이름 변경 후)
+공식 도메인: https://gangnamroom.co.kr
 ```
 
-### 사이트 이름 변경
-1. Site settings
-2. Site details
+### 커스텀 도메인 설정
+1. Site settings → Domain management
+2. Add custom domain
+3. gangnamroom.co.kr 입력
+4. DNS 설정 (도메인 제공업체에서)
 3. Change site name
 4. `gangnamroom` 입력
 5. Save

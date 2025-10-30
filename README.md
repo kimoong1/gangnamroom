@@ -109,9 +109,10 @@ webapp/
 
 ## 🌐 배포 정보
 
-### Netlify 배포
+### 도메인 & 배포
 - **저장소**: https://github.com/kimoong1/gangnamroom
-- **배포 URL**: https://gangnamroom.netlify.app (예정)
+- **공식 도메인**: https://gangnamroom.co.kr
+- **배포 플랫폼**: Cloudflare Pages / Netlify
 - **자동 배포**: GitHub push 시 자동
 
 ### 빌드 설정
