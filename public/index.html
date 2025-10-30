@@ -589,14 +589,15 @@
         
         .feature-card {
             background: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            text-align: left;
             transition: all 0.4s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f0f0f0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
             position: relative;
             overflow: hidden;
+            min-height: 320px;
         }
         
         .feature-card::before {
@@ -605,16 +606,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             border-color: var(--gold);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 25px 70px rgba(212, 175, 55, 0.25);
         }
         
         .feature-card:hover::before {
@@ -622,29 +623,41 @@
         }
         
         .feature-icon {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
             z-index: 1;
+            display: inline-block;
         }
         
         .feature-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
             color: var(--black);
             position: relative;
             z-index: 1;
+            font-weight: 700;
+            line-height: 1.4;
         }
         
         .feature-card p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--gray-dark);
-            line-height: 1.8;
+            line-height: 1.9;
             position: relative;
             z-index: 1;
+            text-align: left;
+        }
+        
+        .feature-card p strong {
+            display: block;
+            color: var(--gold);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
         
         /* 갤러리 */
@@ -1010,114 +1023,141 @@
     
     <!-- 특징 섹션 -->
     <section id="features" class="features">
-        <h2 class="section-title gold-text morphing-text" data-aos="fade-up">강남룸의 프리미엄 특별함</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">강남 최고급 시설과 서비스로 특별한 시간을 선사합니다</p>
+        <h2 class="section-title gold-text morphing-text" data-aos="fade-up">강남룸만의 특별한 9가지 프리미엄</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">강남 최고급 시설과 서비스로 잊지 못할 특별한 시간을 선사합니다</p>
         
         <div class="features-grid">
+            <!-- 1. VIP 프리미엄 룸 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-crown"></i>
                         </div>
-                        <h3>강남 VIP 프리미엄 룸</h3>
-                        <p>강남 최고급 인테리어와 넓은 공간으로 편안하고 고급스러운 분위기를 제공합니다. 강남 비즈니스 접대에 최적화된 VIP 공간입니다.</p>
+                        <h3>VIP 프리미엄 룸</h3>
+                        <p><strong>강남 최고급 럭셔리 공간</strong><br>
+                        15평~30평 대형 VIP룸 완비, 이탈리안 명품 가구와 고급 조명으로 꾸며진 프라이빗 공간. 
+                        비즈니스 접대, 중요한 미팅, 특별한 모임에 완벽한 강남 대표 프리미엄 룸입니다.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 2. 최신 음향 시스템 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-music"></i>
                         </div>
-                        <h3>최신 프로페셔널 음향 시스템</h3>
-                        <p>강남 최고급 프로페셔널 사운드 시스템과 최신 노래방 기기로 완벽한 음질을 경험하실 수 있습니다. 강남 가라오케 음향 시스템 1위.</p>
+                        <h3>최신 프로페셔널 음향</h3>
+                        <p><strong>콘서트홀 수준의 음질</strong><br>
+                        JBL 프로페셔널 스피커, 4K UHD 대형 스크린, 최신 TJ/금영 노래방 기기 탑재. 
+                        에코, 리버브 등 전문 음향 조절 가능. 강남 가라오케 중 최고의 사운드 시스템을 자랑합니다.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 3. 24시간 운영 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h3>24시간 연중무휴 운영</h3>
-                        <p>강남 24시간 가라오케 - 언제든지 방문 가능한 24시간 운영 시스템. 새벽 시간에도 최상의 서비스를 제공하는 강남 대표 가라오케입니다.</p>
+                        <h3>24시간 연중무휴</h3>
+                        <p><strong>언제든지 방문 가능</strong><br>
+                        강남 유일 24시간 풀타임 운영 가라오케. 새벽 시간대에도 동일한 프리미엄 서비스 제공. 
+                        심야 회식, 새벽 2차, 아침 미팅 후 접대까지 시간 제약 없이 이용 가능합니다.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 4. 프리미엄 주류 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-cocktail"></i>
                         </div>
-                        <h3>프리미엄 럭셔리 주류</h3>
-                        <p>강남 최고급 프리미엄 주류 - 엄선된 고급 위스키, 와인, 샴페인, 사케 등 다양한 프리미엄 주류를 준비하고 있습니다.</p>
+                        <h3>프리미엄 주류 컬렉션</h3>
+                        <p><strong>엄선된 고급 주류 300종</strong><br>
+                        발렌타인 30년, 맥캘란 18년, 돔페리뇽 샴페인 등 최고급 양주 보유. 
+                        국내외 프리미엄 와인, 사케, 수제 맥주까지. 소믈리에가 추천하는 맞춤 주류 페어링 서비스.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 5. 단체 예약 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3>강남 단체 예약 환영</h3>
-                        <p>강남 회식 장소, 강남 동창회 장소, 강남 생일 파티 - 각종 모임을 위한 대형 룸과 특별 할인 혜택을 제공합니다. 강남 기업 행사 최적.</p>
+                        <h3>대규모 단체 예약 환영</h3>
+                        <p><strong>10명~50명 대형 연회 가능</strong><br>
+                        회식, 동창회, 생일파티, 송년회, 기업 행사 전문. 대형 룸 3개 보유. 
+                        단체 할인 최대 30%, 케이터링 서비스, 이벤트 기획까지 원스톱 솔루션 제공.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 6. 편리한 접근성 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
-                            <i class="fas fa-car"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3>강남역 10번 출구 도보 5분</h3>
-                        <p>강남역 가라오케 최고의 접근성 - 지하철 2호선, 신분당선 이용 편리. 주차장 완비 및 발레파킹 서비스 제공. 강남역 근처 가라오케 1위.</p>
+                        <h3>강남역 초역세권</h3>
+                        <p><strong>강남역 10번 출구 도보 5분</strong><br>
+                        지하철 2호선, 신분당선 연결. 테헤란로 중심부 위치로 접근성 최고. 
+                        지하 주차장 30대 완비, 발레파킹 무료 서비스. 대중교통·자차 모두 편리한 강남 중심가.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 7. 프리미엄 서비스 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-concierge-bell"></i>
                         </div>
-                        <h3>프리미엄 컨시어지 서비스</h3>
-                        <p>강남 최고급 서비스 - 전문 매니저의 세심한 케어와 맞춤형 서비스로 특별한 시간을 만들어드립니다. 강남 VIP 서비스 1위.</p>
+                        <h3>전담 컨시어지 서비스</h3>
+                        <p><strong>최익현 실장의 맞춤 케어</strong><br>
+                        강남 가라오케 10년 경력 전문 매니저 상주. 룸 추천, 주류 추천, 음식 주문, 분위기 조성까지. 
+                        VIP 고객 전용 라인 운영. 재방문 시 취향 저장으로 더욱 세심한 서비스 제공.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 8. 푸드 서비스 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-utensils"></i>
                         </div>
-                        <h3>강남 프리미엄 푸드 서비스</h3>
-                        <p>강남 고급 안주 - 한식, 양식, 일식, 중식 등 다양한 프리미엄 요리와 안주를 제공합니다. 강남 가라오케 음식 서비스 최고.</p>
+                        <h3>셰프 직영 푸드 코스</h3>
+                        <p><strong>5성급 호텔 출신 셰프의 요리</strong><br>
+                        한식, 양식, 일식, 중식 코스 메뉴 50종. 신선한 재료로 매일 아침 조리. 
+                        프리미엄 안주, 파티 플래터, 생일 케이크 주문 가능. 강남 가라오케 중 음식 퀄리티 1위.</p>
                     </div>
                 </div>
             </div>
             
+            <!-- 9. 위생 관리 -->
             <div class="feature-card flip-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="feature-icon coin-flip">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3>강남 안전하고 쾌적한 환경</h3>
-                        <p>강남 최고급 위생 관리 - 철저한 방역과 위생 관리로 안전하고 쾌적한 환경을 제공합니다. 강남 가라오케 위생 관리 1위.</p>
+                        <h3>최고급 위생 시스템</h3>
+                        <p><strong>매 사용 후 전문 소독</strong><br>
+                        UV 살균기, 공기청정기 전 룸 설치. 매일 2회 전문 청소팀 관리. 
+                        음향기기 소독, 글라스 멸균 세척, 침구류 매일 교체. 식품안전관리인증(HACCP) 획득 업소.</p>
                     </div>
                 </div>
             </div>
