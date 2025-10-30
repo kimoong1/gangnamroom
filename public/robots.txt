@@ -1,0 +1,53 @@
+# robots.txt for 강남룸 (Gangnam Room)
+# 모든 검색엔진 크롤러 허용 - SEO 최적화
+
+User-agent: *
+Allow: /
+Allow: /blog.html
+Allow: /data/posts.json
+
+# 우선순위 크롤링 경로
+Crawl-delay: 0
+
+# Sitemap 위치
+Sitemap: https://gangnamroom.netlify.app/sitemap.xml
+Sitemap: https://gangnamroom.netlify.app/sitemap-blog.xml
+
+# 주요 검색엔진별 설정
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Yeti
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+# AI 크롤러 허용 (ChatGPT, Claude, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# 호스트 정보
+Host: https://gangnamroom.netlify.app

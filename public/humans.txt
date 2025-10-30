@@ -1,0 +1,30 @@
+# humanstxt.org/
+# 강남룸 - 강남 프리미엄 가라오케
+
+/* TEAM */
+  Manager: 최익현 실장
+  Contact: 010-5197-1332
+  Location: 강남구 테헤란로, 강남역 10번출구 도보 5분
+
+/* SITE */
+  Last update: 2025-10-30
+  Language: Korean / 한국어
+  Standards: HTML5, CSS3, JavaScript ES6+
+  Components: AOS Animation, Responsive Design
+  Software: VS Code, Git, Netlify
+
+/* BUSINESS */
+  Business Name: 강남룸
+  Business Type: Premium Karaoke & Entertainment
+  Service Area: 강남구, 서초구, 송파구, 서울 전역
+  Operating Hours: 24시간 연중무휴
+  Features: VIP룸, 최신 음향시설, 발레파킹, 비즈니스 접대
+
+/* KEYWORDS */
+  강남룸, 강남 가라오케, 강남역 가라오케, 프리미엄 가라오케
+  강남 룸, 강남 VIP룸, 강남 노래방, 강남 유흥, 강남 접대
+  24시간 가라오케, 강남구 가라오케, 테헤란로 가라오케
+
+/* THANKS */
+  고객 여러분의 성원에 감사드립니다.
+  최고의 서비스로 보답하겠습니다.
