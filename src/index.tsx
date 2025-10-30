@@ -158,7 +158,7 @@ function renderLayout(title: string, content: string, keywords = '강남룸, 강
         "latitude": "37.4979",
         "longitude": "127.0276"
       },
-      "openingHours": "Mo-Su 18:00-05:00",
+      "openingHours": "Mo-Su 00:00-24:00",
       "priceRange": "₩₩₩"
     }
     </script>
@@ -324,7 +324,7 @@ function renderLayout(title: string, content: string, keywords = '강남룸, 강
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">운영시간</h4>
-                    <p class="text-gray-400">매일 18:00 - 05:00</p>
+                    <p class="text-gray-400">24시간 연중무휴</p>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
@@ -349,7 +349,14 @@ function renderLayout(title: string, content: string, keywords = '강남룸, 강
 function renderMainPage() {
   return renderLayout('홈', `
     <!-- 히어로 섹션 -->
-    <section class="gradient-bg text-white py-32 relative overflow-hidden">
+    <section class="text-white py-32 relative overflow-hidden" style="min-height: 600px;">
+        <!-- 배경 이미지 -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=1920&h=1080&fit=crop&q=80" 
+                 alt="강남룸 프리미엄 가라오케 서비스"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-purple-800/85 to-pink-900/90"></div>
+        </div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-6xl md:text-7xl font-black mb-6 morphing-text" data-aos="fade-up">
                 강남룸
@@ -851,7 +858,7 @@ function renderLocationPage() {
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-clock w-8 text-2xl"></i>
-                                    <span>매일 18:00 - 05:00</span>
+                                    <span>24시간 연중무휴</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-map-marker-alt w-8 text-2xl"></i>
